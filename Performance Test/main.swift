@@ -11,28 +11,23 @@ import Foundation
 var swiftIncrementer = SwiftIncrementer()
 var objcIncrementer = ObjCIncrementer()
 
-let swiftStartTime = CFAbsoluteTimeGetCurrent()
+let swiftStartTime = mach_absolute_time()
 for i in 0..5000 {
 	swiftIncrementer.MultiIncrement(1000)
 	//println("Loop iteration \(i)")
 	}
-let swiftEndTime = CFAbsoluteTimeGetCurrent()
+let swiftEndTime = mach_absolute_time()
 
 let swiftElapsedTime = swiftEndTime - swiftStartTime
 
-let objcStartTime = CFAbsoluteTimeGetCurrent()
+let objcStartTime = mach_absolute_time()
 for i in 0..5000 {
 	objcIncrementer.incrementMultipleTimes(1000)
 	//println("Loop iteration \(i)")
 }
-let objcEndTime = CFAbsoluteTimeGetCurrent()
+let objcEndTime = mach_absolute_time()
 
 let objcElapsedTime = objcEndTime - objcStartTime
 
-NSLog("Total swift Runtime: %g s", swiftElapsedTime)
-NSLog("Total objc Runtime: %g s", objcElapsedTime)
-
-
-
-
-
+NSLog("Total swift Runtime: %ld", swiftElapsedTime)
+NSLog("Total objc Runtime: %ld", objcElapsedTime)
