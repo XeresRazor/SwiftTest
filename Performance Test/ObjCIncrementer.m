@@ -20,6 +20,9 @@
 	if (value % 2 == 0) {
 		value++;
 	}
+	else {
+		value += 3;
+	}
 }
 
 -(void)incrementMultipleTimes:(NSInteger)times {

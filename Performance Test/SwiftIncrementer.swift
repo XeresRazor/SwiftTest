@@ -14,6 +14,8 @@ class SwiftIncrementer {
 	func Increment() {
 		if self.value % 2 == 0 {
 			self.value++
+		} else {
+			self.value += 3
 		}
 	}
 	
