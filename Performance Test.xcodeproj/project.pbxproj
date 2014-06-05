@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		195196721940B3DE00514D00 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195196711940B3DE00514D00 /* main.swift */; };
+		195196791940B3F900514D00 /* SwiftIncrementer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195196781940B3F900514D00 /* SwiftIncrementer.swift */; };
+		1951967D1940B4A000514D00 /* ObjCIncrementer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1951967C1940B4A000514D00 /* ObjCIncrementer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		1951966E1940B3DE00514D00 /* Performance Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Performance Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		195196711940B3DE00514D00 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		195196781940B3F900514D00 /* SwiftIncrementer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftIncrementer.swift; sourceTree = "<group>"; };
+		1951967A1940B4A000514D00 /* Performance Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Performance Test-Bridging-Header.h"; sourceTree = "<group>"; };
+		1951967B1940B4A000514D00 /* ObjCIncrementer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCIncrementer.h; sourceTree = "<group>"; };
+		1951967C1940B4A000514D00 /* ObjCIncrementer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCIncrementer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				195196711940B3DE00514D00 /* main.swift */,
+				195196781940B3F900514D00 /* SwiftIncrementer.swift */,
+				1951967B1940B4A000514D00 /* ObjCIncrementer.h */,
+				1951967C1940B4A000514D00 /* ObjCIncrementer.m */,
+				1951967A1940B4A000514D00 /* Performance Test-Bridging-Header.h */,
 			);
 			path = "Performance Test";
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				195196791940B3F900514D00 /* SwiftIncrementer.swift in Sources */,
 				195196721940B3DE00514D00 /* main.swift in Sources */,
+				1951967D1940B4A000514D00 /* ObjCIncrementer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,14 +215,23 @@
 		195196761940B3DE00514D00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Performance Test/Performance Test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		195196771940B3DE00514D00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Performance Test/Performance Test-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -233,6 +254,7 @@
 				195196771940B3DE00514D00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
