@@ -6,22 +6,17 @@
 //  Copyright (c) 2014 Digital Worlds. All rights reserved.
 //
 
-import Foundation
 
 class SwiftIncrementer {
 	var value: Int = 0
 	
 	func Increment() {
-		if self.value % 2 == 0 {
-			self.value++
-		} else {
-			self.value += 3
-		}
+		value++
 	}
 	
 	func MultiIncrement(times: Int) {
 		for i in 0..times {
-			self.Increment()
+			Increment()
 		}
 	}
 	
